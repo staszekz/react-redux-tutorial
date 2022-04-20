@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 
 const ConnectedList = ({ articles }) => (
   <ul>
-    {articles.map(el => (
-      <li key={el.id}>{el.title}</li>
+    {articles.map((el, i) => (
+      <li key={i}>{el.title}</li>
       ))}
   </ul>
 );
