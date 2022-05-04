@@ -12,8 +12,8 @@ export function getDataWithoutThunk() {
 			return { type: 'DATA_LOADED', payload: json };
 		});
 }
-// this will work, as this is redux-thunk
-export function getData() {
+// this will work, as this is redux-thunk - after rechanded name back to getData()
+export function getDataThunk() {
 	return function (dispatch) {
 		return fetch('https://jsonplaceholder.typicode.com/posts')
 			.then(response => response.json())
@@ -22,3 +22,8 @@ export function getData() {
 			});
 	};
 }
+
+
+export function getData() {
+  return { type: "DATA_REQUESTED" };
+} 
